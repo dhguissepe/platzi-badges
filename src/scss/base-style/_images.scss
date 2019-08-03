@@ -1,0 +1,5 @@
+/*IMAGES*/
+.logo
+{
+  @include img-sizing-by-w(80px, 1);
+}

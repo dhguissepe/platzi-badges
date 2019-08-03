@@ -1,0 +1,16 @@
+/*font-styles*/
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+//lib: variables, functions and settings
+@import 'lib/variables';
+@import 'lib/functions';
+@import 'lib/mixins';
+//base-style
+@import 'base-style/links';
+// @import 'base-style/images';
+@import 'base-style/text';
+@import 'base-style/buttons';
+//components
+@import 'components/badges';
+//layout-styles
+@import 'layout/layout';

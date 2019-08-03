@@ -1,0 +1,4 @@
+@function layer($element)
+{
+  @return map-get($layer, $element);
+}

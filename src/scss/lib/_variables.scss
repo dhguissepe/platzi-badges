@@ -2,9 +2,11 @@
 
 //Main Colors
 $ultra-dark-blue: #1B1B25;
+$dark-blue: #1C3643;
 $platzi-green-text: #98CA3F;
 $platzi-primary: #7DCD40;
 $platzi-danger: #CD4040;
+$twitter-blue: #03a7ea;
 
 //gray scale
 $black: black;
@@ -20,15 +22,15 @@ $danger-shadow-focus: 0 0 0 0.2rem rgba(255, 64, 64, 0.5);
 //badge settings
 $card-object-fit: cover;
 
-//links settings
-$link-hover-darken: 25%;
+//hero settings
+$hero-background: url('../../images/stars.svg') $ultra-dark-blue;
 
 //font families
 $font-family: 'Lato', 'Helvetica Neue', sans-serif;
 $h1-font-family: 'Anton', sans-serif;
 
 //z-index values
-$layer: (
+$layers: (
   bg: -1,
   carousel: 20,
   overlay: 40,

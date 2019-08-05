@@ -35,10 +35,17 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ]
+          {loader: 'style-loader'},
+          {loader: 'css-loader'},
+          {loader: 'resolve-url-loader'},
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              sourceMapContents: false
+            }
+          },
+        ],
       },
       {
         test: /\.jpg|jpeg|png|gif|woff|eot|ttf|svg|mp4|webm$/,

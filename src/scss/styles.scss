@@ -10,7 +10,12 @@
 // @import 'base-style/images';
 @import 'base-style/text';
 @import 'base-style/buttons';
+//pages
+@import 'pages/badgeNew';
+@import 'pages/badges';
 //components
 @import 'components/badges';
+@import 'components/navbar';
+@import 'components/badgeListElement';
 //layout-styles
 @import 'layout/layout';

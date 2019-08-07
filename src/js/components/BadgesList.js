@@ -1,42 +1,26 @@
-import React, {Component} from 'react'
-
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import BadgeListItem from './BadgeListItem.js'
 class BadgesList extends Component {
   render() {
+    if (this.props.badges.length === 0) {
+      return (
+        <div className="container text-center">
+          <p className="m-4 p-4">Not badges found</p>
+          <Link className="btn btn-primary"to="/badges/new" >Add new badge</Link>
+        </div>
+      )
+    }
     return(
-      <ul className="list-unstyled">
+      <React.Fragment>
         {this.props.badges.map((badge) => {
           return (
-            <li key={badge.id}>
-              <div className="fluid-container badge-list-element">
-                <div className="avatar-row row m-0">
-                  <div className="avatar-col col-auto d-flex align-items-center pl-2 pr-2">
-                    <img className="avatar" src={badge.avatarUrl} alt=""/>
-                  </div>
-                  <div className="info-col col p-0 d-flex align-items-center">
-                    <div className="container-fluid">
-                      <div className="row">
-                        <div className="col">
-                          <h3 className="m-0 font-weight-bold">{badge.firstName} {badge.lastName}</h3>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col">
-                          <p className="twitter m-0">@{badge.twitter}</p>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col">
-                          <p className="m-0">{badge.jobTitle}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
+            <Link to={`/badges/${badge.id}/edit`} className="text-reset text-decoration-none col-4 pl-2 pr-2 pt-0 pb-0"key={badge.id}>
+              <BadgeListItem badge={badge}/>
+            </Link>
           )
         })}
-      </ul>
+      </React.Fragment>
     )
   }
 }

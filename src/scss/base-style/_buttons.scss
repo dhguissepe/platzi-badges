@@ -13,21 +13,21 @@
     }
 
     &.btn-#{$class} {
-
       @include btn-class($color);
 
       &:not(:disabled):not(.disabled) {
-
         &:hover, &:active {
-
           @include btn-class($color);
         }
-
         &:focus {
           box-shadow: $shadow;
         }
-
       }
+
     }
+  }
+
+  &-form {
+    min-width: 100px;
   }
 }

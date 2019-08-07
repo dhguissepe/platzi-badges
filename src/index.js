@@ -9,12 +9,11 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './js/App'
+import App from './js/App.js'
 import './scss/styles.scss'
 import 'bootstrap/dist/css/bootstrap.css'
-import logo from './images/badge-header.svg'
 
 const container = document.getElementById('app')
 
 // ReactDOM.render(__qué(elemento)__, __dónde__);
-ReactDOM.render(<App logo={logo} />, container)
+ReactDOM.render(<App />, container)

@@ -12,10 +12,15 @@
 @import 'base-style/buttons';
 //pages
 @import 'pages/badgeNew';
+@import 'pages/badgeEdit';
 @import 'pages/badges';
+@import 'pages/notFound';
+@import 'pages/home';
 //components
-@import 'components/badges';
+@import 'components/badge';
 @import 'components/navbar';
 @import 'components/badgeListElement';
+@import 'components/pageLoading';
+@import 'components/pageError';
 //layout-styles
 @import 'layout/layout';

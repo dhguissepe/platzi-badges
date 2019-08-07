@@ -28,22 +28,26 @@ class BadgeForm extends Component {
   //ahora lo hacemos con la función setstate que dejamos en el elemento inmediatamente
   //superior.
 
-  handleClick = (e) => {
+  // handleClick = (e) => {
+  //   console.log('clicked')
+  //   e.preventDefault()
+  // }
 
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(this.props.formValues)
-  }
+  // handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   console.log(this.props.formValues)
+  // }
 
   render() {
     // const {firstName, lastName, email, twitter, jobTitle} = this.props.formValues.
     return (
-      <div>
-        <h1>New Attendant</h1>
+      <React.Fragment>
 
-        <form onSubmit={this.handleSubmit}>
+        {/* Podemos observar que en este form el evento onSubmit llama a la función
+        referenciada en la propiedad 'onSubmit' que es pasada desde el componente
+        padre 'BadgeNew'. */}
+
+        <form onSubmit={this.props.onSubmit}>
           <div className="form-group">
             <label>First Name</label>
             <input
@@ -103,11 +107,19 @@ class BadgeForm extends Component {
                 value={this.props.formValues.twitter}
               />
             </div>
-            </div>
-
-          <button onClick={this.handleClick} className="btn btn-primary">Save</button>
+          </div>
+          <div className="d-flex align-items-center">
+            <button type="submit" className="btn btn-primary btn-form">Save</button>
+            {/* En el caso de que recibamos un error de parte del servidor o cualquier
+            otro tipo de error. Para el formulario es ideal manejarlo dentro del mismo.
+            Ya que así le da una oportunidad al usuario de volverlo a intentar o revisar
+            sus elementos. */}
+            {this.props.error &&
+              <p className="text-danger m-0 ml-4">Error: {this.props.error.message}</p>
+            }
+          </div>
         </form>
-      </div>
+      </React.Fragment>
     )
   }
 }

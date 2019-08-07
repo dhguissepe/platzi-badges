@@ -16,7 +16,8 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'dist'),
     open: true,
     port: 9000,
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
   module: {
     rules: [

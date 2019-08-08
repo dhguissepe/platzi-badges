@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import logo from '../../images/platziconf-logo.svg'
 import astronauts from '../../images/astronauts.svg'
+
 function LandingPage() {
   return (
     <div className="home d-flex justify-content-center align-items-center">

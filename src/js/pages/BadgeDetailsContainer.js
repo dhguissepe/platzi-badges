@@ -4,7 +4,7 @@ import PageError from '../components/PageError.js'
 import BadgeDetails from './BadgeDetails.js'
 import api from '../../api.js'
 
-class BadgeDetailsCC extends Component {
+class BadgeDetailsContainer extends Component {
 
   state= {
     loading: true,
@@ -17,7 +17,7 @@ class BadgeDetailsCC extends Component {
 
   handleOpenModal= e => {
     e.preventDefault()
-    this.setState({ modalIsOpen: true })
+    this.setState({ modalIsOpen: 'active' })
   }
 
   handleCloseModal = e => {
@@ -91,4 +91,4 @@ class BadgeDetailsCC extends Component {
   }
 }
 
-export default BadgeDetailsCC
+export default BadgeDetailsContainer

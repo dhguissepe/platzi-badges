@@ -4,7 +4,7 @@ import LandingPage from './pages/LandingPage.js'
 import BadgeNew from './pages/BadgeNew.js'
 import Badges from './pages/Badges.js'
 import BadgeEdit from './pages/BadgeEdit'
-import BadgeDetails from './pages/BadgeDetails'
+import BadgeDetails from './pages/BadgeDetailsContainer'
 import NotFound from './pages/NotFound.js'
 import Layout from './components/Layout.js'
 

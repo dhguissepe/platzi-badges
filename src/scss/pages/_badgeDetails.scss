@@ -15,12 +15,18 @@
   justify-content: center;
 }
 
+.BadgeDetails__content-container {
+  padding: 60px 150px;
+}
+
 .BadgeDetails__buttons {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
+  // display: flex;
+  // justify-content: flex-end;
+  // margin-bottom: 1rem;
+  padding-left: 150px !important;
 }
 
 .BadgeDetails__buttons__edit, .BadgeDetails__buttons__delete {
-  min-width: 80px;
+  min-width: 125px;
+  font-size: 1.25rem !important;
 }

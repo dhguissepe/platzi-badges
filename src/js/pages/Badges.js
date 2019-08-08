@@ -115,7 +115,7 @@ class Badges extends Component {
             </div>
           </div>
         </div>
-        <div className="container-fluid">
+        <div className="container-fluid mb-4">
         <div className="row">
             <div className="col d-flex flex-column flex-wrap mb-2">
               {this.state.loading &&

@@ -64,15 +64,6 @@
       "id": "IkMs0hI"
     },
     {
-      "firstName": "Leonidas",
-      "lastName": "Esteban",
-      "email": "leonidasesteban@gmail.com",
-      "avatarUrl": "",
-      "jobTitle": "Frontend Developer",
-      "twitter": "dhguissepe",
-      "id": "ryMK7MN"
-    },
-    {
       "firstName": "Example Name",
       "lastName": "Example Last Name",
       "email": "example@example.com",
@@ -80,6 +71,15 @@
       "jobTitle": "Example",
       "twitter": "example",
       "id": "p-ffIKK"
+    },
+    {
+      "firstName": "Leonidas",
+      "lastName": "Esteban",
+      "email": "leonidasesteban@gmail.com",
+      "avatarUrl": "",
+      "jobTitle": "Frontend Developer",
+      "twitter": "leonidasesteban",
+      "id": "bX0jW_W"
     }
   ]
 }

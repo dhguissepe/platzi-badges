@@ -15,7 +15,7 @@ class BadgesList extends Component {
       <React.Fragment>
         {this.props.badges.map((badge) => {
           return (
-            <Link to={`/badges/${badge.id}/edit`} className="text-reset text-decoration-none col-4 pl-2 pr-2 pt-0 pb-0"key={badge.id}>
+            <Link to={`/badges/${badge.id}`} className="text-reset text-decoration-none col-4 pl-2 pr-2 pt-0 pb-0"key={badge.id}>
               <BadgeListItem badge={badge}/>
             </Link>
           )

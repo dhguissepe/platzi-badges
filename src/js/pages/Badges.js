@@ -22,7 +22,8 @@ class Badges extends Component {
     this.state = {
       loading: true,
       error: null,
-      data: undefined
+      data: undefined,
+      searchFilterValue: ''
     }
   }
 
@@ -113,6 +114,17 @@ class Badges extends Component {
                 alt="Conf Logo"
               />
             </div>
+            <div className="search-filter form-group">
+              <input
+                placeholder="Filter Badge"
+                type="text"
+                className="form-control"
+                value={this.state.searchFilterValue}
+                onChange={e => {
+                  this.setState({searchFilterValue: e.target.value})
+                }}
+              />
+            </div>
           </div>
         </div>
         <div className="container-fluid mb-4">
@@ -122,18 +134,22 @@ class Badges extends Component {
                 <MiniLoader className="align-self-center"/>
               }
               {this.state.data.length > 0 &&
-                <Link to="/badges/new" className="btn btn-primary align-self-end justify-content-center">
+                <Link
+                  to="/badges/new"
+                  className="btn btn-primary align-self-end justify-content-center"
+                >
                   New Badge
                 </Link>
               }
             </div>
-            {/* <div className="Badges__buttons col-auto d-flex align-items-center">
-
-            </div> */}
           </div>
 
           <div className="row">
-              <BadgesList className="col-4 pl-2 pr-2 pt-0 pb-0" badges={this.state.data}/>
+              <BadgesList
+                className="col-4 pl-2 pr-2 pt-0 pb-0"
+                badges={ this.state.data }
+                searchFilterValue={ this.state.searchFilterValue }
+              />
           </div>
         </div>
       </React.Fragment>

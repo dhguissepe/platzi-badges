@@ -20,7 +20,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[hash].js',
-    publicPath: 'http://localhost:3001/',
+    publicPath: '/dist/',
     chunkFilename: 'js/[id].[chunkhash].js'
   },
   module: {
@@ -40,13 +40,28 @@ module.exports = {
         ]
       },
       {
+        test: /\.scss$/,
+        use: [
+          {loader: MiniCSSExtractPlugin.loader},
+          {loader: 'css-loader'},
+          {loader: 'resolve-url-loader'},
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              sourceMapContents: false
+            }
+          },
+        ]
+      },
+      {
         test: /\.jpg|jpeg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
         use: {
           loader: 'url-loader',
           options: {
             limit: 1000,
             outputPath: 'assets/',
-            name: '[hash].[ext]' //al agregar el template ext me permite establecer la extensión por defecto de cada archivo procesado
+            name: '[hash].[ext]'
           }
         }
       }
@@ -63,29 +78,13 @@ module.exports = {
         filename: 'css/[name].[hash].css',
         chunkFilename: 'css/[id].[hash].css'
     }),
-    new AddAssetHtmlPlugin({ //este plugin añade algún asset a los html creados por HTMLWebpackPlugin
-      filepath: path.resolve(__dirname, 'dist/js/*.dll.js'), //se le agrega un patron con * ya que la idea es agregar a todos los archivos dll que existan. Además de que no se conoce el hash que se generará
-      outputPath: 'js', //con esta línea de código le decimos donde debe liberar dichos archivos dll
-      publicPath: 'http://localhost:3001/js/' //y con esta línea le decimos que lea los elementos siempre desde la carpeta js (en este caso solo para los dll)
+    new AddAssetHtmlPlugin({
+      filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
+      outputPath: 'js',
+      publicPath: 'http://localhost:3001/js/'
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ["**/app.**"]
     })
   ]
 }
-
-//NOTA: Para probar esta build de producción usamos json-server y le agregamos el flag --static <distpath>
-
-//VERSIONAMIENTO: Es buena práctica versionar los archivos que se estén utilizando ya que dichos
-//archivos al llegar al cliente pasan por un proceso de comparación a través del nombre del mismo
-//y debido a ello el navegador no actualiza de manera adecuada los elementos añadidos o modificados.
-//Para lograr esto existe una técnica en la que se versionan los archivos con hash y de esa manera
-//siempre tu producto se actualizará para los demás.
-
-//Todos los cambios y opciones agregadas al webpack son procesos que tiene que ejecutar
-//y cada vez puede durar aún más tiempo
-
-//LIMPIEZA: Para la limpieza de los archivos viejos se utiliza un plugin llamado clean-webpack-plugin
-
-//Optimización para la optimización se usan dos plugins, uno para JS (Terser JS Plugin) y otro
-// para CSS (Optimize CSS Assets Plugin), los cuales tienen un mejor algoritmo de compresión.

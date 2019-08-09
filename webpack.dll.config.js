@@ -10,6 +10,7 @@ module.exports = {
       'react',
       'react-dom',
       'react-router-dom',
+      'md5'
     ]
   },
   optimization: {
@@ -20,7 +21,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].[hash].dll.js', //al colocarle hash el elemento cambia totalmente. Al llegar al navegador dicho elemento es totalmente actualizado y reemplaza al anterior en el caché del cliente. Y .dll para denotar que es un dll
+    filename: 'js/[name].[hash].dll.js',
     library: '[name]'
   },
   plugins: [

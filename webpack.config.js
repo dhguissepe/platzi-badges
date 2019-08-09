@@ -18,9 +18,9 @@ module.exports = {
     ]
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: 'js/[name].[hash].js',
-    publicPath: '/dist/',
+    publicPath: '/',
     chunkFilename: 'js/[id].[chunkhash].js'
   },
   module: {
@@ -79,7 +79,7 @@ module.exports = {
         chunkFilename: 'css/[id].[hash].css'
     }),
     new AddAssetHtmlPlugin({
-      filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
+      filepath: path.resolve(__dirname, 'docs/js/*.dll.js'),
       outputPath: 'js',
       publicPath: 'http://localhost:3001/js/'
     }),

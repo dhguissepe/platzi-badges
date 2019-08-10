@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import logoConf from '../../images/platziconf-logo.svg'
 import Badge from '../components/Badge.js'
 import { Link } from 'react-router-dom'

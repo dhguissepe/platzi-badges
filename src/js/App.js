@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import LandingPage from './pages/LandingPage.js'
 import BadgeNew from './pages/BadgeNew.js'

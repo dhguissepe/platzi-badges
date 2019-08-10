@@ -45,7 +45,7 @@ class BadgeEdit extends Component {
 
     this.setState({
       form: {
-        ... this.state.form,
+        ...this.state.form,
         [e.target.name]: e.target.value
       }
     })

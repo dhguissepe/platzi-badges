@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import header from '../../images/badge-header.svg'
 import Gravatar from '../components/Gravatar.js'
+
 class Badge extends Component {
   render() {
     return (

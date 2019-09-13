@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start-local-server": "node server/server.js",
     "server": "json-server --port 3001 --watch server/db.json --static ./dist",
     "seed": "node server/seed.js",
     "build": "webpack --config ./webpack.config.js --mode production",
@@ -12,6 +13,7 @@
   "dependencies": {
     "@babel/runtime": "7.5.5",
     "bootstrap": "4.3.1",
+    "express": "^4.17.1",
     "md5": "2.2.1",
     "react": "16.8.3",
     "react-dom": "16.8.3",

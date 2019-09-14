@@ -96,7 +96,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': 'production',
-      'process.env.PORT': JSON.stringify(process.env.PORT)
+      PORT: JSON.stringify(process.env.PORT)
     })
   ]
 }

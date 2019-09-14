@@ -1,4 +1,5 @@
-const BASE_URL = 'http://localhost:5000/db';
+const PORT = process.env.PORT || 5000
+const BASE_URL = `http://localhost:${ PORT }/db`;
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const randomNumber = (min = 0, max = 1) =>

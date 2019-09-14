@@ -93,7 +93,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       'process.env.PORT': JSON.stringify(process.env.PORT)
     }),
-    new webpack.optimize.UglifyJsPlugin({
+    new webpack.optimize.minimize({
       minimize : true,
       compress : {
           warnings : false

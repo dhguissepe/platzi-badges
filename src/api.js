@@ -1,4 +1,3 @@
-const CURRENT_PORT = PORT || 5000
 const BASE_URL = `http://localhost:${ CURRENT_PORT }/db`;
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));

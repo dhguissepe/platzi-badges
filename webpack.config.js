@@ -8,12 +8,12 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const dotenv = require('dotenv')
 
-const env = dotenv.config().parsed
+// const env = dotenv.config().parsed
 
-const envKeys = Object.keys(env).reduce((prev, next) => {
-  prev[`process.env.${next}`] = JSON.stringify(env[next]);
-  return prev;
-}, {});
+// const envKeys = Object.keys(env).reduce((prev, next) => {
+//   prev[`process.env.${next}`] = JSON.stringify(env[next]);
+//   return prev;
+// }, {});
 
 module.exports = {
   entry: {
@@ -94,6 +94,9 @@ module.exports = {
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ["**/app.**"]
     }),
-    new webpack.DefinePlugin(envKeys)
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': 'production',
+      'process.env.PORT': JSON.stringify(process.env.PORT)
+    })
   ]
 }

@@ -1,4 +1,4 @@
-const BASE_URL = 'https://my-json-server.typicode.com/dhguissepe/platzi-badges-db';
+const BASE_URL = 'http://localhost:5000/db';
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const randomNumber = (min = 0, max = 1) =>

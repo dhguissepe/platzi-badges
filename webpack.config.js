@@ -7,6 +7,7 @@ const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const dotenv = require('dotenv')
+const wdotenv = require('dotenv-webpack')
 
 dotenv.config()
 
@@ -89,15 +90,10 @@ module.exports = {
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ["**/app.**"]
     }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.PORT': JSON.stringify(process.env.PORT)
-    }),
-    new webpack.optimize.minimize({
-      minimize : true,
-      compress : {
-          warnings : false
-      }
-    })
+    // new webpack.DefinePlugin({
+    //   'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    //   'process.env.PORT': JSON.stringify(process.env.PORT)
+    // })
+  new wdotenv()
   ]
 }

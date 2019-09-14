@@ -1,3 +1,7 @@
+const dotenv = require('dotenv')
+
+dotenv.config()
+
 const BASE_URL = `http://localhost:${ process.env.PORT }/db`;
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));

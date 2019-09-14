@@ -90,8 +90,8 @@ module.exports = {
       cleanOnceBeforeBuildPatterns: ["**/app.**"]
     }),
     new webpack.DefinePlugin({
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      CURRENT_PORT: JSON.stringify(process.env.PORT)
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.PORT': JSON.stringify(process.env.PORT)
     })
   ]
 }

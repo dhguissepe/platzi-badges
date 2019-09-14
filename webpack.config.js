@@ -6,9 +6,6 @@ const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const dotenv = require('dotenv')
-
-dotenv.config()
 
 module.exports = {
   entry: {
@@ -89,9 +86,5 @@ module.exports = {
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ["**/app.**"]
     }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.PORT': JSON.stringify(process.env.PORT)
-    })
   ]
 }

@@ -1,4 +1,4 @@
-const BASE_URL = `https://dh-platzi-badges.herokuapp.com/db`;
+const BASE_URL = '/db';
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const randomNumber = (min = 0, max = 1) =>
@@ -13,6 +13,8 @@ async function callApi(endpoint, options = {}) {
     'Content-Type': 'application/json',
     Accept: 'application/json'
   };
+
+  debugger;
 
   const url = BASE_URL + endpoint;
   const response = await fetch(url, options);

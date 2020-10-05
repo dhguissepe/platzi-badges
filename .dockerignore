@@ -1,0 +1,9 @@
+Dockerfile
+madule-manifest.json
+dist/
+node_modules/
+webpack.dev.config.js
+Procfile
+README.md
+package-lock.json
+.gitignore

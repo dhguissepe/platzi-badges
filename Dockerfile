@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm i && npm run build:dll && npm run build
+RUN npm i --loglevel=error && npm run build:dll && npm run build && rm -rf node_modules && cd ./server/ && npm i --loglevel=error
 
 EXPOSE 5000
 

@@ -1,7 +1,7 @@
 Dockerfile
-madule-manifest.json
+modules-manifest.json
 dist/
-node_modules/
+**node_modules**
 webpack.dev.config.js
 Procfile
 README.md

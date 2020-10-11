@@ -21,17 +21,14 @@
   &__description {
     color: $white;
     font-size: 1.2em;
+    text-align: center;
   }
 
   .btn--home {
     min-width: 180px;
   }
 
-  .astronauts-wrapper {
-    padding-left: 60px;
-  }
-
   .astronauts {
-    height: 60vh;
+    height: 30vh;
   }
 }

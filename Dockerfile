@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm i --loglevel=error && npm run build:dll && npm run build && rm -rf node_modules && cd ./server/ && npm i --loglevel=error
+RUN npm ci && npm run build:dll && npm run build && npm prune --production
 
 EXPOSE 5000
 

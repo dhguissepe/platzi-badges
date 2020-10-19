@@ -5,5 +5,5 @@ dist/
 webpack.dev.config.js
 Procfile
 README.md
-package-lock.json
 .gitignore
+json-server/
